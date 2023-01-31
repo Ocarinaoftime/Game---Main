@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="../js/p5.js"></script>
+  <script src="../js/p5.play.js"></script>
+  <script src="../js/gamelab-api.js"></script>
+  <script src="code.js"></script>
+  <script>
+      var eggs = "You found the easter eggs! Here they are! \nPress your R key to: rotate at fast speeds! \nThere will be more easter eggs in the future!" 
+      function show() {
+          document.getElementById('keyboard-controls').style.visibility = "visible"
+          document.getElementById('controller-controls').style.visibility = "visible"
+          document.getElementById('show').style.visibility = "hidden"
+          document.getElementById('hide').style.visibility = "visible"
+      }
+      function hide() {
+          document.getElementById('keyboard-controls').style.visibility = "hidden"
+          document.getElementById('controller-controls').style.visibility = "hidden"
+          document.getElementById('show').style.visibility = "visible"
+          document.getElementById('hide').style.visibility = "hidden"
+      }
+  </script>
+  <link rel="stylesheet" href="../CSS/gamelab.css"></link>
+  <meta charset="utf-8">
+  <title>Game</title>
+  <style>
+    body.expo {
+        background-color: black;
+    }
+    #sketch.expo.no-controls {
+        top: 82px;
+    }
+    #show,
+    #hide {
+        position: absolute;
+        left: 1000px;
+        top: 30%;
+        width: 100px;
+        height: 50px;
+    }
+    #keyboard-controls {
+        position: relative;
+        left: 1200px;
+        top: 60%;
+        width: 200px
+    }
+    #controller-controls {
+        position: absolute;
+        left: 900px;
+        top: 339px;
+        width: 400px;
+    }
+    .xbox {
+        position: absolute;
+        left: -300px;
+        top: 0px;
+        width: 400px;
+    }
+    td,
+    th {
+        border: 1px solid grey;
+        padding: 10px
+    }
+    td {
+        text-align: center;
+    }
+    th[scope="col"] {
+        background-color: #696969;
+        color: white;
+    }
+    table {
+        position: relative;
+        border-collapse: collapse;
+        border: 2px solid grey;
+    }
+    #gameover {
+        position: absolute;
+        left: 500px;
+    }
+    #retry {
+        position: absolute;
+        left: 500px;
+        top: 100px;
+    }
+  </style>
+
+<body class="web" style="margin:0; overflow:hidden; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; position:fixed; top:0; left:0; width:400px; height:565px;">
+    <div id="sketch" class="web" style="position:absolute;"></div>
+    <div id="soft-buttons" style="display: none;">
+      <button id="leftButton" disabled className="arrow">
+      </button>
+      <button id="rightButton" disabled className="arrow">
+      </button>
+      <button id="upButton" disabled className="arrow">
+      </button>
+      <button id="downButton" disabled className="arrow">
+      </button>
+    </div>
+    <div id="studio-dpad-container" style="position:absolute; width:400px; bottom:5px; height:157px; overflow-y:hidden;"></div>
+        <button id="show" onclick="show();">Show Controls</button>
+        <button id="hide" onclick="hide();" style="visibility:hidden;">Hide Controls</button>
+        <div id="gameover" style="visibility: hidden;">Game over</div>
+        <button id="retry" style="visibility: hidden;" onclick="document.location.reload()">Retry?</button>
+    <div id="keyboard-controls" style="visibility:hidden;">
+        <div>
+            <table>
+                <caption>Keyboard Controls</caption>
+            <tr>
+                <th scope="col">Key</th>
+                <th scope="col">Action</th>
+            </tr>
+            <tr>
+                <th scope="row">W</th>
+                <td>Move Up</td>
+            </tr>
+            <tr>
+                <th scope="row">A</th>
+                <td>Move Left</td>
+            </tr>
+            <tr>
+                <th scope="row">S</th>
+                <td>Move Down</td>
+            </tr>
+            <tr>
+                <th scope="row">D</th>
+                <td>Move Right</td>
+            </tr>
+            <tr>
+                <th scope="row">Space</th>
+                <td>Punch/Swing Sword</td>
+            </tr>
+            <tr>
+                <th scope="row">E</th>
+                <td>Use/Interact</td>
+            </tr>
+            <tr>
+                <th scope="row">C</th>
+                <td>Shield</td>
+            </tr>
+            <tr>
+                <th scope="row">Escape</th>
+                <td>Pause/Resume Game</td>
+            </tr>
+        </table> 
+        </div>
+    </div>
+  </body>
+</head>

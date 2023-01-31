@@ -1,0 +1,135 @@
+body {
+    background: black;
+    padding: 0;
+    margin: 0;
+}
+.file1 {
+    height: 100px;
+    width: 500px;
+    border-radius: 30px;
+    background-color: #0074d9;
+    top: 10%;
+    left: 31%;
+    position: absolute;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-size: 50px;
+}
+.file1:hover {
+    background-color: white;
+    animation: blinker 1s 1 infinite;
+}
+
+
+.file2 {
+    height: 100px;
+    width: 500px;
+    border-radius: 30px;
+    background-color: #0074d9;
+    top: 30%;
+    left: 31%;
+    position: absolute;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-size: 50px;
+}
+.file2:hover {
+    background-color: white;
+    animation: blinker 1s 1 infinite;
+}
+.file3 {
+    height: 100px;
+    width: 500px;
+    border-radius: 30px;
+    background-color: #0074d9;
+    top: 50%;
+    left: 31%;
+    position: absolute;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-size: 50px;
+}
+.file3:hover {
+    background-color: white;
+    animation: blinker 1s 1 infinite;
+}
+.import {
+    left: 10%;
+    top: 20%;
+    background-color: #0074d9;
+    border-radius: 30px;
+    height: 50px;
+    width: 100px;
+    position: absolute;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+}
+.import:hover {
+    background-color: white;
+    animation: blinker 1s 1 infinite;
+}
+@keyframes file1vis {
+    from {visibility: visible;}
+    to {visibility: hidden;}
+}
+.text {
+    color: white;
+    top: 5%;
+    left: 45%;
+    position: absolute;
+    text-align: center;
+}
+#char {
+    height: 102px;
+    width: 102px;
+    left: 45%;
+    top: 35%;
+    position:absolute;
+    visibility: hidden;
+    z-index: 1;
+}
+#map {
+    left: 25%;
+    top: 35%;
+    position:absolute;
+    visibility: hidden;
+    z-index: auto;
+}
+#bush {
+    left: 15%;
+    top: 35%;
+    position:absolute;
+    visibility: hidden;
+    z-index: auto;
+    height: 64px;
+    width: 64px;
+}
+.player {
+    z-index: 2;
+}
+#sketch {
+    position: absolute;
+    left: 31%;
+    top: 30%;
+}
+
+
+@keyframes movemap {
+    to {
+        top: -7.5%;
+    }
+}
+
+@keyframes blinker {
+    50% {
+        color:white;
+    }
+    50% {
+        color:#0074d9
+    }
+}
