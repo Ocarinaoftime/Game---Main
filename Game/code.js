@@ -40,7 +40,7 @@ window.preload = function () {
     }
 // -----
 
-World.frameRate = 175
+World.frameRate = 60
 
 showMobileControls(true, true, false, true)
 var died = false
